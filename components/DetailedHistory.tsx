@@ -46,6 +46,15 @@ const paramMeta: Record<string, {
   monocyte: { name: 'Monosit (Pembersih)', emoji: '🧹', explain: 'Sel pembersih yang memakan kuman dan sel rusak', unit: '%', goodDir: 'lower', target: '4–8%', chartColor: '#059669', chartBg: 'rgba(5,150,105,0.08)' },
   eosinophil: { name: 'Eosinofil (Anti-Alergi)', emoji: '🌿', explain: 'Sel yang melawan parasit dan terkait reaksi alergi', unit: '%', goodDir: 'lower', target: '1–4%', chartColor: '#65A30D', chartBg: 'rgba(101,163,13,0.08)' },
   basophil: { name: 'Basofil', emoji: '🟣', explain: 'Sel darah putih paling sedikit — berperan dalam reaksi alergi', unit: '%', goodDir: 'lower', target: '0–1%', chartColor: '#7E22CE', chartBg: 'rgba(126,34,206,0.08)' },
+  // Elektrolit
+  natrium: { name: 'Natrium (Na)', emoji: '🧂', explain: 'Mineral penting untuk menjaga keseimbangan cairan tubuh dan tekanan darah', unit: 'mEq/L', goodDir: 'lower', target: '136–145 mEq/L', chartColor: '#0284C7', chartBg: 'rgba(2,132,199,0.08)' },
+  kalium: { name: 'Kalium (K)', emoji: '🍌', explain: 'Mineral untuk jantung dan otot — harus seimbang, tidak terlalu tinggi/rendah', unit: 'mEq/L', goodDir: 'lower', target: '3.5–5.1 mEq/L', chartColor: '#D97706', chartBg: 'rgba(217,119,6,0.08)' },
+  klorida: { name: 'Klorida (Cl)', emoji: '💎', explain: 'Mineral yang membantu menjaga keseimbangan asam-basa dan cairan tubuh', unit: 'mEq/L', goodDir: 'lower', target: '98–107 mEq/L', chartColor: '#0891B2', chartBg: 'rgba(8,145,178,0.08)' },
+  // Fungsi Hati
+  sgot: { name: 'SGOT (AST)', emoji: '🟤', explain: 'Enzim hati — jika tinggi bisa menandakan gangguan pada hati', unit: 'U/L', goodDir: 'lower', target: '< 40 U/L', chartColor: '#92400E', chartBg: 'rgba(146,64,14,0.08)' },
+  sgpt: { name: 'SGPT (ALT)', emoji: '🟠', explain: 'Enzim hati yang lebih spesifik — penanda utama kesehatan hati', unit: 'U/L', goodDir: 'lower', target: '< 41 U/L', chartColor: '#B45309', chartBg: 'rgba(180,83,9,0.08)' },
+  // Asam Urat
+  uric_acid: { name: 'Asam Urat', emoji: '💠', explain: 'Sisa metabolisme yang dibuang ginjal — terlalu tinggi bisa sebabkan nyeri sendi', unit: 'mg/dL', goodDir: 'lower', target: '< 7.0 mg/dL', chartColor: '#7C3AED', chartBg: 'rgba(124,58,237,0.08)' },
   // Profil Lipid
   cholesterol_total: { name: 'Kolesterol Total', emoji: '🫀', explain: 'Jumlah total lemak di darah — semakin rendah semakin sehat untuk jantung', unit: 'mg/dL', goodDir: 'lower', target: '< 200 mg/dL', chartColor: '#DC2626', chartBg: 'rgba(220,38,38,0.08)' },
   ldl: { name: 'Kolesterol Jahat (LDL)', emoji: '⚠️', explain: 'Lemak jahat yang bisa menyumbat pembuluh darah — harus dijaga rendah', unit: 'mg/dL', goodDir: 'lower', target: '< 100 mg/dL', chartColor: '#EA580C', chartBg: 'rgba(234,88,12,0.08)' },
@@ -116,6 +125,36 @@ const groups = [
     accentText: 'text-indigo-700 dark:text-indigo-300',
     accentBg: 'bg-indigo-100/80 dark:bg-indigo-900/25',
     ringColor: '#6366F1',
+  },
+  {
+    id: 'electrolyte', title: 'Elektrolit', emoji: '⚡',
+    desc: 'Keseimbangan mineral tubuh',
+    ids: ['natrium', 'kalium', 'klorida'],
+    gradient: 'from-sky-400 to-blue-500',
+    gradientBg: 'from-sky-50 via-blue-50/40 to-cyan-50/20 dark:from-sky-950/30 dark:via-blue-950/15 dark:to-cyan-950/10',
+    accentText: 'text-sky-700 dark:text-sky-300',
+    accentBg: 'bg-sky-100/80 dark:bg-sky-900/25',
+    ringColor: '#0284C7',
+  },
+  {
+    id: 'liver', title: 'Fungsi Hati', emoji: '🫁',
+    desc: 'Kesehatan organ hati',
+    ids: ['sgot', 'sgpt'],
+    gradient: 'from-amber-400 to-yellow-500',
+    gradientBg: 'from-amber-50 via-yellow-50/40 to-orange-50/20 dark:from-amber-950/30 dark:via-yellow-950/15 dark:to-orange-950/10',
+    accentText: 'text-amber-700 dark:text-amber-300',
+    accentBg: 'bg-amber-100/80 dark:bg-amber-900/25',
+    ringColor: '#D97706',
+  },
+  {
+    id: 'uric', title: 'Asam Urat', emoji: '💠',
+    desc: 'Sisa metabolisme & risiko sendi',
+    ids: ['uric_acid'],
+    gradient: 'from-purple-400 to-fuchsia-500',
+    gradientBg: 'from-purple-50 via-fuchsia-50/40 to-pink-50/20 dark:from-purple-950/30 dark:via-fuchsia-950/15 dark:to-pink-950/10',
+    accentText: 'text-purple-700 dark:text-purple-300',
+    accentBg: 'bg-purple-100/80 dark:bg-purple-900/25',
+    ringColor: '#9333EA',
   },
 ];
 
