@@ -146,7 +146,7 @@ const tabConfig: Record<TabId, {
     goodPointColor: '#059669',
     cautionPointColor: '#D97706',
     pointCheck: (v) => v > 100,
-    encouragement: 'Kolesterol LDL terus turun dari 142 ke 115. Tren bagus! Terus jaga pola makan dan rutin minum obat ya, Pak. ❤️',
+    encouragement: 'Alhamdulillah, LDL Bapak sudah di bawah 100 sejak Jul 2025! Dari 89 turun ke 51, sekarang 63. Terus pertahankan ya, Pak. ❤️',
   },
 };
 
