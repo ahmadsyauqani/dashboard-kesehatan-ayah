@@ -7,6 +7,7 @@ import HighlightCards from '@/components/HighlightCards';
 import TrendChart from '@/components/TrendChart';
 import DoctorNotes from '@/components/DoctorNotes';
 import DetailedHistory from '@/components/DetailedHistory';
+import HealthTips from '@/components/HealthTips';
 import FooterNote from '@/components/FooterNote';
 
 interface DashboardClientProps {
@@ -28,10 +29,13 @@ export default function DashboardClient({ data }: DashboardClientProps) {
         {/* 3. Trend charts with explanations */}
         <TrendChart parameters={data.parameters} />
         
-        {/* 4. Full history — expandable */}
+        {/* 4. Saran & Rekomendasi Kesehatan */}
+        <HealthTips parameters={data.parameters} />
+        
+        {/* 5. Full history — expandable */}
         <DetailedHistory parameters={data.parameters} />
         
-        {/* 5. Doctor notes — after history */}
+        {/* 6. Doctor notes — after history */}
         <DoctorNotes alerts={data.alerts} />
         
         {/* 6. Footer */}
