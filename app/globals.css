@@ -157,3 +157,12 @@ body {
 .gradient-caution {
   background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
 }
+
+/* ===== Scrollbar Hide (for horizontal tabs on mobile) ===== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

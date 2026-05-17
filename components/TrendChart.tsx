@@ -255,15 +255,15 @@ export default function TrendChart({ parameters }: TrendChartProps) {
         </div>
       </div>
 
-      {/* Pill-style tabs */}
-      <div className="flex overflow-x-auto scrollbar-hide px-4 pt-3 gap-1.5 md:px-5">
+      {/* Pill-style tabs — horizontally scrollable on small screens */}
+      <div className="flex flex-nowrap overflow-x-auto scrollbar-hide px-4 pt-3 pb-1 gap-1.5 md:px-5 -mx-0" style={{ WebkitOverflowScrolling: 'touch' }}>
         {(Object.keys(tabConfig) as TabId[]).map(tabId => {
           const tab = tabConfig[tabId];
           return (
             <button
               key={tabId}
               onClick={() => setActiveTab(tabId)}
-              className={`flex items-center gap-1 px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap transition-all rounded-full min-w-[44px] ${
+              className={`flex items-center gap-1 px-3 py-1.5 text-[11px] font-semibold whitespace-nowrap transition-all rounded-full flex-shrink-0 ${
                 activeTab === tabId
                   ? 'bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 shadow-sm'
                   : 'text-[var(--warm-400)] hover:bg-[var(--warm-100)] hover:text-[var(--warm-600)]'
@@ -276,6 +276,8 @@ export default function TrendChart({ parameters }: TrendChartProps) {
             </button>
           );
         })}
+        {/* Right padding spacer for scroll */}
+        <div className="flex-shrink-0 w-1" aria-hidden="true" />
       </div>
 
       {/* Info strip */}
