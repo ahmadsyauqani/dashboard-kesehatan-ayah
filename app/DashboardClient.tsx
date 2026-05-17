@@ -32,11 +32,11 @@ export default function DashboardClient({ data }: DashboardClientProps) {
         {/* 4. Full history — expandable */}
         <DetailedHistory parameters={data.parameters} />
         
-        {/* 5. Doctor notes */}
-        <DoctorNotes alerts={data.alerts} />
-        
-        {/* 6. Saran & Rekomendasi Kesehatan */}
+        {/* 5. Saran & Rekomendasi Kesehatan */}
         <HealthTips parameters={data.parameters} />
+        
+        {/* 6. Doctor notes */}
+        <DoctorNotes alerts={data.alerts} />
         
         {/* 7. Footer */}
         <FooterNote />
